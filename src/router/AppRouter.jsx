@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import { GlobalStyles } from "../styles/Global.styles";
@@ -11,13 +11,17 @@ import Detail from "../pages/detail/Detail";
 import About from "../pages/about/About";
 
 const AppRouter = () => {
+  const [currentUser, setCurrentUser] = useState(false)
   return (
     <BrowserRouter>
       <Navbar />
       <GlobalStyles />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setCurrentUser={setCurrentUser} />}
+        />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/about" element={<PrivateRouter />}>
           <Route path="" element={<About />} />
@@ -26,12 +30,11 @@ const AppRouter = () => {
           <Route path="" element={<Detail />} />
         </Route> */}
 
-{/* her ikiside user a baglı oldugu için bu şekilde yazılabilir */}
+        {/* her ikiside user a baglı oldugu için bu şekilde yazılabilir */}
         <Route element={<PrivateRouter />}>
           <Route path="/detail" element={<Detail />} />
           <Route path="/about" element={<About />} />
         </Route>
-
       </Routes>
       <Footer />
     </BrowserRouter>
