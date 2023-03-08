@@ -6,11 +6,17 @@ flex-direction: column;
 
 `
 
-export const HomeImg=styled.div`
-width: 35%;
-max-height: 50vh;
-border-radius: 1rem;
-`
+export const HomeImg = styled.div`
+margin: 2rem;
+display: flex;
+justify-content: center;
+width: 100%;
+  img {
+    width: 40%;
+    max-height: 50vh;
+    border-radius: 1rem;
+  }
+`;
 
 export const MainContainer=styled(Flex)`
 flex-direction: row;
