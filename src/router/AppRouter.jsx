@@ -11,16 +11,20 @@ import Detail from "../pages/detail/Detail";
 import About from "../pages/about/About";
 
 const AppRouter = () => {
-  const [currentUser, setCurrentUser] = useState(false)
+  const [currentUser, setCurrentUser] = useState(
+    sessionStorage.getItem("user")
+  );
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar currentUser={currentUser} />
       <GlobalStyles />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
           path="/login"
-          element={<Login setCurrentUser={setCurrentUser} />}
+          element={
+            <Login setCurrentUser={setCurrentUser} currentUser={currentUser} />
+          }
         />
         <Route path="/register" element={<Register />} />
         {/* <Route path="/about" element={<PrivateRouter />}>

@@ -17,11 +17,13 @@ export const Logo = styled(NavLink)`
 
 export const Menu = styled(Flex)`
   font-weight: bold;
-  flex-direction:column;
-  width: 100%;
-  transition:all .3s ease-in;
-  overflow:hidden;
-  max-height:${({showMenu})=> showMenu ? "300px": "0"};
+  @media (max-width: ${({ theme }) => theme.screens.lg}) {
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.3s ease-in;
+    max-height: ${({ showMenu }) => (showMenu ? "300px" : "0")};
+    overflow: hidden;
+  }
 `;
 
 export const MenuLink = styled(NavLink)`
