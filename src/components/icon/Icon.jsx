@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
-const Icon = () => {
+const Icon = ({ path, icon }) => {
   return (
-    <div>Icon</div>
-  )
-}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={16}
+      height={16}
+      fill="currentColor"
+      className={`bi bi-${icon}`}
+    >
+      <path d={path} />
+    </svg>
+  );
+};
 
-export default Icon
+export default Icon;
