@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Flex from "../../styles/Flex";
 
-
 export const CardContainer = styled(Flex)`
   flex-direction: column;
   height: 20rem;
@@ -18,6 +17,7 @@ export const CardContainer = styled(Flex)`
     transition: all 0.3s ease-in;
   }
 `;
+
 export const CardHeader = styled.h1`
   font-size: 1.2rem;
   text-align: center;
