@@ -15,6 +15,7 @@ const Header = ({ setQuery, setSelectType, getData }) => {
     e.preventDefault();
     getData();
   };
+
   return (
     <HeaderContainer>
       <HeaderTitle>Books or Magazines</HeaderTitle>
@@ -22,15 +23,17 @@ const Header = ({ setQuery, setSelectType, getData }) => {
         <SearchInput
           type="text"
           placeholder="name"
-          required
           onChange={(e) => setQuery(e.target.value)}
+          required
         />
         <SelectBox onChange={(e) => setSelectType(e.target.value)}>
-          {printType.map((type) => (
-            <option key={type} value={type}>
-              {type}
-            </option>
-          ))}
+          {printType.map((type) => {
+            return (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            );
+          })}
         </SelectBox>
         <HeaderButton type="submit">Search</HeaderButton>
       </HeaderForm>

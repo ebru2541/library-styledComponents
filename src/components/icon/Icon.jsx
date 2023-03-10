@@ -1,16 +1,19 @@
 import React from "react";
+import { SvgIcon } from "./Icon.style";
 
-const Icon = ({ path, icon }) => {
+const Icon = ({ path, icon, hoverColor }) => {
   return (
-    <svg
+    <SvgIcon
+      hoverColor={hoverColor}
       xmlns="http://www.w3.org/2000/svg"
-      width={16}
-      height={16}
+      width="32"
+      height="32"
       fill="currentColor"
       className={`bi bi-${icon}`}
+      viewBox="0 0 16 16"
     >
       <path d={path} />
-    </svg>
+    </SvgIcon>
   );
 };
 
